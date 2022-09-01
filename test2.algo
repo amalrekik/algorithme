@@ -1,0 +1,39 @@
+ALGORITHM SUMARR
+VAR
+    n:INTEGER:=5;
+    m:INTEGER:=4;
+    arr1:ARRAY_OF INTEGER[n];
+    arr2:ARRAY_OF INTEGER[m];
+    i:INTEGER:=0;
+    j:INTEGER:=0;
+    k:INTEGER:=0;
+    q:INTEGER:=0;
+    sum:INTEGER:=0;
+BEGIN
+     Write("ENTRER LE PREMIER TABLEAU");
+     Read(arr1);
+      Write("ENTRER LE DEUXIEME TABLEAU");
+     Read(arr2);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        REPEAT
+        IF (arr1[i]<>arr2[j]) THEN
+            j:=j+1;
+        END_IF
+        UNTIL (arr1[i]=arr2[j] or j=m)
+        IF (j=m) THEN
+            sum=sum+arr1[i];
+        END_IF
+    END_FOR
+
+      FOR k FROM 0 TO m-1 STEP 1  DO
+        REPEAT
+        IF (arr1[q]<>arr2[k]) THEN
+            q:=q+1;
+        END_IF
+        UNTIL (arr1[q]=arr2[k] or q=n)
+        IF (q=n) THEN
+            sum=sum+arr2[k];
+        END_IF
+    END_FOR
+    Write(sum);
+END

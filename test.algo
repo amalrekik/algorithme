@@ -1,0 +1,19 @@
+ALGORITHM phrasecalcul
+VAR
+ph:STRING; 
+i:INTEGER:= 0; 
+n:INTEGER:= 0; 
+m:INTEGER:= 0;
+BEGIN
+ Write("doneer une phrase qui fini par un pnt");
+ Read(ph);
+ REPEAT
+    IF (ph[i]=' ') THEN n:=n+1 
+        ELSE_IF (ph[i]='a' or ph[i]='e' or ph[i]='i' or ph[i]='o' or ph[i]='w' or ph[i]='u' or ph[i]='y')
+        THEN m:=m+1;
+    END_IF
+    i:=i+1;
+ UNTIL (PH[i]='.')
+ Write(n);
+ Write(m);
+END
