@@ -7,13 +7,18 @@ m:INTEGER:= 0;
 BEGIN
  Write("doneer une phrase qui fini par un pnt");
  Read(ph);
+  IF (ph[ph.length-2]=' ') THEN n:=0 
+  ELSE n:=1;
+  END_IF
  REPEAT
     IF (ph[i]=' ') THEN n:=n+1 
-        ELSE_IF (ph[i]='a' or ph[i]='e' or ph[i]='i' or ph[i]='o' or ph[i]='w' or ph[i]='u' or ph[i]='y')
+        ELSE_IF (ph[i]='a' or ph[i]='e' or ph[i]='i' or ph[i]='o' or ph[i]='u' or ph[i]='y')
+        THEN m:=m+1;
+         ELSE_IF (ph[i]='A' or ph[i]='E' or ph[i]='I' or ph[i]='O' or ph[i]='U' or ph[i]='Y')
         THEN m:=m+1;
     END_IF
     i:=i+1;
- UNTIL (PH[i]='.')
+ UNTIL (ph[i]='.')
  Write(n);
  Write(m);
 END
